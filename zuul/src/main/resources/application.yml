@@ -1,0 +1,17 @@
+server:
+  port: 8085
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:8080/eureka/
+spring:
+  application:
+    name: zuul
+zuul:
+  routes:
+    api-a:
+      path: /api-a/**
+      serviceId: rabbion
+    api-b:
+      path: /api-b/**
+      serviceId: feign
